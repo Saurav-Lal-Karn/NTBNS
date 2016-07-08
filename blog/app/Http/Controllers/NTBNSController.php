@@ -25,4 +25,8 @@ class NTBNSController extends Controller
     public function members(){
     	return view('member');
     }
+
+    public function login(){
+    	return view('login');
+    }
 }

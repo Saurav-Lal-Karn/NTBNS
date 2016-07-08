@@ -2,346 +2,103 @@
 @extends('menubar')
 @extends('footer')
 @section('content')
-    <div id="tf-works">
-        <div class="container"> <!-- Container -->
-            <div class="section-title text-center center">
-                <h2><strong>Members</strong></h2>
-                <div class="clearfix"></div>
-                <em>List of our members</em>
-            </div>
-            <div class="space"></div>
+	<div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Members</h3>
+              </div>
 
-            <div class="categories">
-                
-                <ul class="cat">
-                    <li class="pull-left"><h4>Filter by Type:</h4></li>
-                    <li class="pull-right">
-                        <ol class="type">
-                            <li><a href="#" data-filter="*" class="active">All</a></li>
-                            <li><a href="#" data-filter=".passouts">Passouts</a></li>
-                            <li><a href="#" data-filter=".current">Current</a></li>
-                            <li><a href="#" data-filter=".faculty" >Faculty</a></li>
-                        </ol>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div id="lightbox" class="row">
+            <div class="clearfix"></div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_content">
+                     <div class="row">
+                       <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                        <ul class="pagination pagination-split">
+                          <li><a href="#">A</a></li>
+                          <li><a href="#">B</a></li>
+                          <li><a href="#">C</a></li>
+                          <li><a href="#">D</a></li>
+                          <li><a href="#">E</a></li>
+                          <li>...</li>
+                          <li><a href="#">W</a></li>
+                          <li><a href="#">X</a></li>
+                          <li><a href="#">Y</a></li>
+                          <li><a href="#">Z</a></li>
+                        </ul>
+                      </div>
+                      <div class="clearfix"></div>
+                        
 
-                <div class="col-sm-6 col-md-3 col-lg-3 passouts">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
+
+
+
+
+
+
+
+                      
+                        <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+                          <div class="well profile_view">
+                            <div class="col-sm-12">
+                              <h4 class="brief"><i>Faculty Member</i></h4>
+                              <div class="left col-xs-7">
+                                <h2>XXXXXX YYYYY ZZZZ</h2>
+                                <p><strong>About: </strong> Batch | FACULTY | CURRENT </p>
+                                <ul class="list-unstyled">
+                                  <li><i class="fa fa-building"></i> Address: </li>
+                                  <li><i class="fa fa-phone"></i> Phone #: </li>
+                                </ul>
+                              </div>
+                              <div class="right col-xs-5 text-center">
+                                <img src="images/img.jpg" alt="" class="img-circle img-responsive">
+                              </div>
+                            </div>
+                            <div class="col-xs-12 bottom text-center">
+                              <div class="col-xs-12 col-sm-6 emphasis">
+                                <button type="button" class="btn btn-primary btn-xs">
+                                  <i class="fa fa-user"> </i> View Profile
+                                </button>
+                              </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                      </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 faculty">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
+                      
 
-                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 passouts">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 faculty">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
 
-                                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 passouts">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 faculty">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
 
-                                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 passouts">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 faculty">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
 
-                                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 passouts">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-3 faculty">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
+                     </div>
+                  </div>
                 </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
-
-                                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 passouts">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 faculty">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
-
-                                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 passouts">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 faculty">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 current">
-                    <div class="portfolio-item">
-                        <div class="item" style="text-align:left;">
-                            <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
-                            <h5>Name        : Name</h5>
-                            <h5>Batch       : Name</h5>
-                            <h5>Email       : email</h5>
-                            <h5>About Me    : <small>Description of person</small></h5>
-                        </div>      
-                    </div>
-                </div>
-
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
+        </div> 
 @endsection

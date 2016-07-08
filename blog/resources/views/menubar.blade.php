@@ -1,43 +1,81 @@
 @section('menubar')
-<nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class= "row">
-            <div class = "col-md-1 col-xs-1">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="index.html">NTBNS</a>
-                </div>
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+            <ul class="nav side-menu">
+                <li>
+                    <a>
+                        <i class="fa fa-home"></i> Home
+                        
+                    </a>
+                </li>
+                <li><a><i class="fa fa-info"></i> About Us</a>
+                  </li>
+                  <li><a><i class="fa fa-users"></i> Members <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tables.html">Faculty Members</a></li>
+                      <li><a href="tables_dynamic.html">Committee Members</a></li>
+                      <li><a href="tables_dynamic.html">General Members</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-file-text"></i>Notices <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tables.html">Recent</a></li>
+                      <li><a href="tables_dynamic.html">All</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-download"></i>Downloads <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tables.html">Recent</a></li>
+                      <li><a href="tables_dynamic.html">Notes</a></li>
+                      <li><a href="tables_dynamic.html">Books</a></li>
+                      <li><a href="tables_dynamic.html">Reports</a></li>
+                      <li><a href="tables_dynamic.html">Miscellaneous</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-phone"></i>Contact</a></li>
+                </ul>
+              </div>
+            
             </div>
-            <div class = "col-md-5 col-xs-5">
-             <div id="navbar" class="navbar-collapse collapse">
-              <form class="navbar-form">
-                <div class="form-group">
-                  <input type="text" placeholder="Search NTBNS" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Search</button>
-              </form>
-            </div><!--/.navbar-collapse -->
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class = "col-md-6 col-xs-6">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/" class="page-scroll">Home</a></li>
-                    <li><a href="#" class="page-scroll">About Us</a></li>
-                    <li><a href="members" class="page-scroll">Members</a></li>
-                    <li><a href="notices" class="page-scroll">Notices</a></li>
-                    <li><a href="downloads" class="page-scroll">Downloads</a></li>
-                  </ul>
-                </div><!-- /.navbar-collapse -->
-            </div>
-        </div><!-- /.container-fluid -->
-  	</div>
-</nav>
+            <!-- /sidebar menu -->
 
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+              
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-home"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
 @endsection

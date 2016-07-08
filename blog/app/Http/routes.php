@@ -15,8 +15,18 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('profile', function () {
+    return view('profile');
+});
+
+
 Route::get('gallery', 'NTBNSController@gallery');
 Route::get('downloads', 'NTBNSController@downloads');
 Route::get('members', 'NTBNSController@members');
 Route::get('notices', 'NTBNSController@notices');
+Route::get('login', 'NTBNSController@login');
 
+Route::post('login',	'Controller@login');
+Route::get('admin/index', function(){
+	return view('admin.index');
+});

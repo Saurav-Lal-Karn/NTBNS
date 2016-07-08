@@ -1,33 +1,25 @@
 @section('footer')
-<nav id="footer">
-    <div class="container">
-        <div class="pull-left fnav">
-               <!--
-                <p>ALL RIGHTS RESERVED. COPYRIGHT © 2014. Designed by <a href="https://dribbble.com/shots/1817781--FREEBIE-Spirit8-Digital-agency-one-page-template">Robert Berki</a> and Coded by <a href="https://dribbble.com/jennpereira">Jenn Pereira</a></p>
-            -->
-        </div>
-        <div class="pull-right fnav">
-            <ul class="footer-social">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            </ul>
-        </div>
+ <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            <i class="fa fa-facebook"></i>
+          </div>
+          
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
     </div>
-</nav>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/SmoothScroll.js"></script>
-    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
 
-    <script src="js/owl.carousel.js"></script>
-
-    <!-- Javascripts
-    ================================================== -->
-    <script type="text/javascript" src="js/main.js"></script>
-
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script>
 @endsection
