@@ -17,6 +17,7 @@ class Controller extends BaseController
 
 
     public function login(){
+        
     	$rules	=	array(
 	    		'email'		=>	'required|email',
 	    		'password'	=>	'required|alphaNum|min:3'

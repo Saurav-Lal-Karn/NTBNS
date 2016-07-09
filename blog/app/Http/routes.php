@@ -19,6 +19,13 @@ Route::get('profile', function () {
     return view('profile');
 });
 
+Route::get('contact', function () {
+    return view('contact');
+});
+
+Route::get('about', function () {
+    return view('about');
+});
 
 Route::get('gallery', 'NTBNSController@gallery');
 Route::get('downloads', 'NTBNSController@downloads');
@@ -30,3 +37,20 @@ Route::post('login',	'Controller@login');
 Route::get('admin/index', function(){
 	return view('admin.index');
 });
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('addUser', function ()    {
+        return view('admin.addUser');
+    });
+
+    Route::get('editUser', function ()    {
+        return view('admin.editUser');
+    });
+
+    Route::get('deleteUser', function ()    {
+        return view('admin.deleteUser');
+    });
+});
+
+
+

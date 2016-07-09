@@ -1,7 +1,6 @@
-@extends('admin.layout')
-@extends('admin.header')
-@extends('admin.menubar')
-@extends('admin.footer')
+@extends('layout')
+@extends('menubar')
+@extends('footer')
 @section('content')
 	<div class="right_col" role="main">
           <div class="">
@@ -37,12 +36,6 @@
                 </div>
               </div>
             </div>
-
-
-
-         
-
-
           </div>
         </div> 
 @endsection

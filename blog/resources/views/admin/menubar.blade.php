@@ -37,6 +37,14 @@
                     </ul>
                   </li>
                   <li><a href="contact"><i class="fa fa-phone"></i>Contact</a></li>
+                  
+                  <li><a><i class="fa fa-user"></i>Users<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="addUser">Add</a></li>
+                      <li><a href="editUser">Edit</a></li>
+                      <li><a href="deleteUser">Delete</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
             
