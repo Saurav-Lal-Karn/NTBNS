@@ -50,6 +50,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('deleteUser', function ()    {
         return view('admin.deleteUser');
     });
+
+    Route::post('login', 'ntbnsServiceController@login');
+    Route::post('addUser', 'ntbnsServiceController@addUser');
+
 });
 
 
