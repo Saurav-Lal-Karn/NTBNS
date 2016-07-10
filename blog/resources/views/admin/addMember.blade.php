@@ -7,7 +7,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Home</h3>
+                <h3></h3>
               </div>
 
               <div class="title_right">
@@ -28,7 +28,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Edit user</h2>
+                    <h2>Add Member</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -48,13 +48,15 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="addMember" enctype="multipart/form-data">
+                     
+                     {!! csrf_field() !!}
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First Name
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12" name="firstName">
                         </div>
                       </div>
                       
@@ -62,22 +64,21 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last Name</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12" required>
+                          <input type="text" id="last-name" name="lastName" required="required" class="form-control col-md-7 col-xs-12" required>
                         </div>
                       </div>
                       
                       <div class="form-group">
                         <label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Email Address</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="email" name="address" required>
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="email" name="email" required>
                         </div>
                       </div>
                       
                        <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Batch</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="select2_single form-control" tabindex="-1">
-                            <option></option>
+                          <select class="select2_single form-control" tabindex="-1" name="batch">
                             <option value="050">050</option>
                             <option value="051">051</option>
                             <option value="052">052</option>
@@ -110,14 +111,13 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Faculty</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="select2_single form-control" tabindex="-1">
-                            <option></option>
-                            <option value="1">Architecture</option>
-                            <option value="2">Civil</option>
-                            <option value="3">Computer</option>
-                            <option value="4">Electrical</option>
-                            <option value="5">Electronics</option>
-                            <option value="6">Mechanical</option>
+                          <select class="select2_single form-control" tabindex="-1" name="faculty">
+                            <option value="Architecture">Architecture</option>
+                            <option value="Civil">Civil</option>
+                            <option value="Computer">Computer</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Mechanical">Mechanical</option>
                           </select>
                         </div>
                       </div>
@@ -130,35 +130,61 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">Password</label>
+                        <label for="address" class="control-label col-md-3 col-sm-3 col-xs-12">Address</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="password" class="form-control col-md-7 col-xs-12" type="password" name="password" required>
+                          <input id="address" class="form-control col-md-7 col-xs-12" type="text" name="address">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="rePassword" class="control-label col-md-3 col-sm-3 col-xs-12">Re-Password</label>
+                        <label for="address" class="control-label col-md-3 col-sm-3 col-xs-12">Phone Number</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="rePassword" class="form-control col-md-7 col-xs-12" type="password" name="rePassword" required>
+                          <input id="address" class="form-control col-md-7 col-xs-12" type="text" name="phoneNo">
                         </div>
                       </div>
 
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Category</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="select2_single form-control" tabindex="-1" name="category">
+                            <option value="Faculty Member">Faculty Member</option>
+                            <option value="Committee Member">Committee Member</option>
+                            <option value="General Member">General Member</option>
+                          </select>
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label for="about" class ="control-label col-md-3 col-sm-3 col-xs-12">About</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea id="about"  class="form-control col-md-7 col-xs-12" name="about" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="250" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long about description"
+                            data-parsley-validation-threshold="10"></textarea>
+                        </div>
+                      </div>
+
+
+
+                      <div class="form-group">
+                        <label for="picture" class="control-label col-md-3 col-sm-3 col-xs-12">Profile Picture(.jpg,.png only, max-size: 1mb)</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="picture" class="form-control col-md-7 col-xs-12" type="file" name="picture">
+                        </div>
+                      </div>
 
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button type="submit" class="btn btn-primary">Cancel</button>
                           <button type="submit" class="btn btn-success">Submit</button>
+                          <a href="index"><button class="btn btn-primary">Cancel</button></a>
                         </div>
-                      </div>
+                        </div>
 
-                    </form>
+                    </form>      
                   </div>
                 </div>
               </div>
             </div>
-
-
 
 
          

@@ -32,27 +32,75 @@ Route::get('downloads', 'NTBNSController@downloads');
 Route::get('members', 'NTBNSController@members');
 Route::get('notices', 'NTBNSController@notices');
 Route::get('login', 'NTBNSController@login');
+Route::post('login', 'ntbnsServiceController@login');
 
-Route::post('login',	'Controller@login');
-Route::get('admin/index', function(){
-	return view('admin.index');
-});
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('addUser', function ()    {
+    
+    Route::get('test', ['middleware' => 'auth', function(){ 
+        return view('admin.test');
+    }]);
+
+    Route::get('index', ['middleware' => 'auth', function(){ 
+        return view('admin.index');
+    }]);
+
+    Route::get('addUser',['middleware'=>'auth', function ()    {
         return view('admin.addUser');
-    });
+    }]);
 
-    Route::get('editUser', function ()    {
-        return view('admin.editUser');
-    });
+    Route::get('addContact',['middleware'=>'auth',function(){
+        return view('admin.addContact');
+    }]);
 
-    Route::get('deleteUser', function ()    {
-        return view('admin.deleteUser');
-    });
+    Route::get('addMember',['middleware'=>'auth',function(){
+        return view('admin.addMember');
+    }]);
 
-    Route::post('login', 'ntbnsServiceController@login');
+    Route::get('addNotice',['middleware'=>'auth',function(){
+        return view('admin.addNotice');
+    }]);
+
+    Route::get('addDownload',['middleware'=>'auth',function(){
+        return view('admin.addDownload');
+    }]);
+
+    Route::get('addAbout',['middleware'=>'auth',function(){
+        return view('admin.addAbout');
+    }]);
+
+    Route::get('editUserList',[
+        'middleware'=>'auth', 
+        'uses'      =>'ntbnsServiceController@editUserList'
+    ]);
+    
+    Route::get('editContactList',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@editContactList'
+    ]);
+
+    Route::get('editMemberList',['middleware'=>'auth', function (){
+        return view('admin.editMemberList');
+    }]);
+
+    Route::get('editNoticeList',['middleware'=>'auth', function (){
+        return view('admin.editNoticeList');
+    }]);
+
+    Route::get('editDownloadList',['middleware'=>'auth', function (){
+        return view('admin.editDownloadList');
+    }]);
+
+    Route::get('editAboutList',['middleware'=>'auth', function (){
+        return view('admin.editAboutList');
+    }]);    
+
     Route::post('addUser', 'ntbnsServiceController@addUser');
+    Route::post('addContact', 'ntbnsServiceController@addContact');
+    Route::post('addAbout', 'ntbnsServiceController@addAbout');
+    Route::post('addDownload', 'ntbnsServiceController@addDownload');
+    Route::post('addMember', 'ntbnsServiceController@addMember');
+    Route::post('addNotice', 'ntbnsServiceController@addNotice');
 
 });
 

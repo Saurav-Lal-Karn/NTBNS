@@ -30,15 +30,15 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form method="POST" action="admin/login">
+            <form method="POST" action="login">
               {!! csrf_field() !!}
 
               <h1>Login Form</h1>
               <div>
-                <input type="email" class="form-control" placeholder="Email" required />
+                <input type="email" class="form-control" placeholder="Email" name="email" required />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required />
+                <input type="password" class="form-control" placeholder="Password" name="password" required />
               </div>
               <button type="submit" class="btn btn-default submit"> login</button>
               
@@ -55,7 +55,6 @@
 
                 <div class="clearfix"></div>
                 <br />
-
                
               </div>
             </form>

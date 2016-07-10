@@ -9,40 +9,44 @@
                     </a>
                 </li>
                 <li>
-                  <a href="about">
-                      <i class="fa fa-info"></i> About Us
+                  <a>
+                      <i class="fa fa-info"></i> About Us<span class="fa fa-chevron-down"></span>
                   </a>
+                    <ul class="nav child_menu">
+                      <li><a href="addAbout">Add</a></li>
+                      <li><a href="editAboutList">Edit</a></li>
+                    </ul>
                 </li>
                   
                 <li><a><i class="fa fa-users"></i> Members <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="members">Faculty Members</a></li>
-                      <li><a href="members">Committee Members</a></li>
-                      <li><a href="members">General Members</a></li>
+                      <li><a href="addMember">Add</a></li>
+                      <li><a href="editMemberList">Edit</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-file-text"></i>Notices <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="notices">Recent</a></li>
-                      <li><a href="notices">All</a></li>
+                      <li><a href="addNotice">Add</a></li>
+                      <li><a href="editNoticeList">Edit</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-download"></i>Downloads <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="downloads">Recent</a></li>
-                      <li><a href="downloads">Notes</a></li>
-                      <li><a href="downloads">Books</a></li>
-                      <li><a href="downloads">Reports</a></li>
-                      <li><a href="downloads">Miscellaneous</a></li>
+                      <li><a href="addDownload">Add</a></li>
+                      <li><a href="editDownloadList">Edit</a></li>
                     </ul>
                   </li>
-                  <li><a href="contact"><i class="fa fa-phone"></i>Contact</a></li>
-                  
+                  <li><a><i class="fa fa-phone"></i>Contacts <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="addContact">Add</a></li>
+                      <li><a href="editContactList">Edit</a></li>
+                    </ul>
+                  </li>
+
                   <li><a><i class="fa fa-user"></i>Users<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="addUser">Add</a></li>
-                      <li><a href="editUser">Edit</a></li>
-                      <li><a href="deleteUser">Delete</a></li>
+                      <li><a href="editUserList">Edit</a></li>
                     </ul>
                   </li>
                 </ul>
