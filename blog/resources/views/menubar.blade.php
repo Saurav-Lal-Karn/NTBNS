@@ -3,40 +3,41 @@
     <div class="menu_section">
             <ul class="nav side-menu">
                 <li>
-                    <a href="/">
+                    <a href="{{url('/')}}">
                         <i class="fa fa-home"></i> Home
                         
                     </a>
                 </li>
                 <li>
-                  <a href="about">
+                  <a href="{{url('about')}}">
                       <i class="fa fa-info"></i> About Us
                   </a>
                 </li>
                   
                 <li><a><i class="fa fa-users"></i> Members <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="members">Faculty Members</a></li>
-                      <li><a href="members">Committee Members</a></li>
-                      <li><a href="members">General Members</a></li>
+                      <li><a href="{{url('members/Faculty Members')}}">Faculty Members</a></li>
+                      <li><a href="{{url('members/Committee Members')}}">Committee Members</a></li>
+                      <li><a href="{{url('members/General Members')}}">General Members</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-file-text"></i>Notices <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="notices">Recent</a></li>
-                      <li><a href="notices">All</a></li>
+                      <li><a href="{{url('notices/Recent')}}">Recent</a></li>
+                      <li><a href="{{url('notices/All')}}">All</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-download"></i>Downloads <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="downloads">Recent</a></li>
-                      <li><a href="downloads">Notes</a></li>
-                      <li><a href="downloads">Books</a></li>
-                      <li><a href="downloads">Reports</a></li>
-                      <li><a href="downloads">Miscellaneous</a></li>
+                      <li><a href="{{url('downloads/all')}}">All</a></li>
+                      <li><a href="{{url('downloads/Notes')}}">Notes</a></li>
+                      <li><a href="{{url('downloads/Books')}}">Books</a></li>
+                      <li><a href="{{url('downloads/Syllabus')}}">Syllabus</a></li>
+                      <li><a href="{{url('downloads/Reports')}}">Reports</a></li>
+                      <li><a href="{{url('downloads/Miscellaneous')}}">Miscellaneous</a></li>
                     </ul>
                   </li>
-                  <li><a href="contact"><i class="fa fa-phone"></i>Contact</a></li>
+                  <li><a href="{{url('contact')}}"><i class="fa fa-phone"></i>Contact</a></li>
                 </ul>
               </div>
             

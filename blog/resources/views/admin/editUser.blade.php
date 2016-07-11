@@ -48,7 +48,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{url('admin/addUser')}}/{{ $user_details[0]->id}}">
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="addUser">
                      
                      {!! csrf_field() !!}
 
@@ -56,7 +56,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First Name
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12" name="firstName" value="{{ $user_details[0]->firstName }}" required >
+                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12" name="firstName">
                         </div>
                       </div>
                       
@@ -64,21 +64,21 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last Name</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="lastName" required="required" class="form-control col-md-7 col-xs-12" value = {{ $user_details[0]->lastName }} required>
+                          <input type="text" id="last-name" name="lastName" required="required" class="form-control col-md-7 col-xs-12" required>
                         </div>
                       </div>
                       
                       <div class="form-group">
                         <label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Email Address</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="email" name="email" value="{{ $user_details[0]->email }}" required>
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="email" name="email" required>
                         </div>
                       </div>
                       
                        <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Batch</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="select2_single form-control" tabindex="-1" name="batch" value="{{ $user_details[0]->batch }}">
+                          <select class="select2_single form-control" tabindex="-1" name="batch">
                             <option value="050">050</option>
                             <option value="051">051</option>
                             <option value="052">052</option>
@@ -111,7 +111,7 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Faculty</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="select2_single form-control" tabindex="-1" name="faculty" value={{ $user_details[0]->faculty }}>
+                          <select class="select2_single form-control" tabindex="-1" name="faculty">
                             <option value="1">Architecture</option>
                             <option value="2">Civil</option>
                             <option value="3">Computer</option>
@@ -125,7 +125,7 @@
                       <div class="form-group">
                         <label for="rollNo" class="control-label col-md-3 col-sm-3 col-xs-12">Roll No.</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="roll-no" class="form-control col-md-7 col-xs-12" type="number" name="rollNo" value="{{ $user_details[0]->rollNo }}" required>
+                          <input id="roll-no" class="form-control col-md-7 col-xs-12" type="number" name="rollNo" required>
                         </div>
                       </div>
 

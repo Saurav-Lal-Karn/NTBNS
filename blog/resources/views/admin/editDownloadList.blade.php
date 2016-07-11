@@ -33,7 +33,7 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Users</h2>
+                    <h2>Downloads</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -47,14 +47,15 @@
                   </div>
                   <div class="x_content">
 
-                    <p>List of users with editing options</p>
+                    <p>List of downloads with editing options</p>
 
                     <!-- start project list -->
                     <table class="table table-striped projects">
                       <thead>
                         <tr>
                           <th style="width: 1%">#</th>
-                          <th style="width: 20%">Points</th>
+                          <th style="width: 20%">Title</th>
+                          <th style="width: 40%"> Description</th>
                           <th>Category</th>
                           <th>Status</th>
                           <th style="width: 20%">#Edit</th>
@@ -63,26 +64,31 @@
                       <tbody>
                         
 
-                        @foreach($abouts as $about)
+                        @foreach($downloads as $download)
                         <tr>
                           <td>#</td>
                           <td>
-                            <a> {{$about->points}} </a>
+                            <a>{{$download->title}} </a>
                             <br />
-                            <small>Updated {{ $about->created_at }}</small>
+                            <small>{{$download->created_at}} </small>
                           </td>
                           <td>
-                            {{$about->category}}
+                            <a><small> {{$download->description}} </small></a>
                           </td>
-                          
+                          <td>
+                            <a>
+                              {{$download->category}}    
+                            </a>
+                          </td>
                           <td>
                             <button type="button" class="btn btn-success btn-xs">Active</button>
                           </td>
                           <td>
-                            <a href="{{url('admin/editAbout')}}/{{ $about->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                            <a href="{{url('admin/deleteAbout')}}/{{ $about->id }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                            <a href="{{url('admin/editDownload')}}/{{ $download->id }}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                            <a href="{{url('admin/deleteDownload')}}/{{ $download->id }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                           </td>
                         </tr>
+                        
                         @endforeach
 
 

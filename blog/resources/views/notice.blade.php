@@ -32,36 +32,26 @@
                 </div>
                 <div class="x_content">
                   <ul class="list-unstyled msg_list">
-                    <li>
-                        
+                    
+
+                    @foreach($notices as $notice)
+                    <li>    
                       <a>
-                        <span class="image">
-                          <img src="images/img.jpg" alt="img" />
-                        </span>
                         <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                          <span><i class = "fa fa-download"></i> </span>
+                          <span> {{$notice->title}} </span>
+                          <span class="time"> {{$notice->created_at}} </span>
                         </span>
+                        </br></br>
                         <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that
+                          {{$notice->description}}
                         </span> 
+                        </br>
+                        <a href="{{ url('/')}}/uploads/notices/{{$notice->source}}" target="_blank"><span class = "pull-right"> Download    <i class = "fa fa-download"></i> </span></a>
                       </a>
                     </li>
-                    <li>
-                      <a>
-                        <span class="image">
-                          <img src="images/img.jpg" alt="img" />
-                        </span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that
-                        </span>
-                      </a>
-                    </li>
+                    @endforeach
+
+
                   </ul>
                 </div> 
             </div>

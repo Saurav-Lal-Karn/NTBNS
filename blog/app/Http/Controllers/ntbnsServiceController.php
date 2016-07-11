@@ -73,7 +73,7 @@ class ntbnsServiceController extends Controller
     
     }
 
-    public function  addUser(Request $request){
+    public function  addUser(Request $request,$id){
         
         $statusCode     =   200;
         $message        =   "";
@@ -95,9 +95,13 @@ class ntbnsServiceController extends Controller
                                 ->withInput(Input::except('password'));
             }*/
 
-            $userDetails    =   new UserDetails();
-            $users          =   new Users();
-
+            if($id){
+                $userDetails    =   UserDetails::where('id',$id);
+                $users          =   Users::where('id',$id);
+            }else{
+                $userDetails    =   new UserDetails();
+                $users          =   new Users();
+            }
 
             $newPassword    =   Hash::make($password);
             $userDetails->firstName =   $firstName;
@@ -111,7 +115,8 @@ class ntbnsServiceController extends Controller
             $users->password    =   $newPassword;
 
             $userDetails->save();
-            $users->save();
+            //$users->save();
+
             DB::commit();
             return Redirect::to('admin/addUser');
         }
@@ -316,8 +321,8 @@ class ntbnsServiceController extends Controller
                 $members->about     =   $about;
             }
 
-            if($phoneNo != ""){
-                $members->phoneN0   =   $phoneNo;
+            if($phoneNumber != ""){
+                $members->phoneNo   =   $phoneNumber;
             }         
 
 
@@ -396,6 +401,44 @@ class ntbnsServiceController extends Controller
         return ;
     }
 
+
+
+    public function editUser($id){
+        $user_details = DB::select('select * from user_details where status = 1 AND id = '.$id);
+        return view('admin.addUser',['user_details' => $user_details]);
+    }
+
+    public function editContact($id){
+        $contact_details = DB::select('select * from contacts where status = 1 AND id = '.$id);
+        return view('admin.addContact',['contact_details' => $contact_details]);
+    }
+
+
+    public function editNotice($id){
+        $notice_details = DB::select('select * from notices where status = 1 AND id = '.$id);
+        return view('admin.addNotice',['notice_details' => $notice_details]);
+    }
+
+    public function editDownload($id){
+        $download_details = DB::select('select * from downloads where status = 1 AND id = '.$id);
+        return view('admin.addDownload',['download_details' => $download_details]);
+    }
+
+    public function editMember($id){
+        $member_details = DB::select('select * from members where status = 1 AND id = '.$id);
+        return view('admin.addMember',['member_details' => $member_details]);
+    }
+
+
+    public function editAbout($id){
+        $about_details = DB::select('select * from about where status = 1 AND id = '.$id);
+        return view('admin.addAbout',['about_details' => $about_details]);
+    }
+
+
+
+
+
     public function editUserList(){
         
         $user_details = DB::select('select * from user_details where status = "1"');
@@ -408,10 +451,113 @@ class ntbnsServiceController extends Controller
         return view('admin.editContactList',['contacts' => $contacts]);
     }
 
-    public function editList(){
-        
-        $contacts = DB::select('select * from contacts where status = "1"');
-        return view('admin.editContactList',['contacts' => $contacts]);
+    public function editDownloadList(){        
+        $downloads = DB::select('select * from downloads where status = "1"');
+        return view('admin.editDownloadList',['downloads' => $downloads]);
     }
+
+    public function editNoticeList(){        
+        $notices = DB::select('select * from notices where status = "1"');
+
+        foreach($notices as $n){
+            $id         =   $n->uploadedBy;
+            if($id != ""){
+                $uploadedBy = DB::select('select firstName,lastName from user_details where id = '.$id.' Limit 1');
+                
+                $fullName = $uploadedBy[0]->firstName." ".$uploadedBy[0]->lastName;
+                $n->uploadedBy = $fullName;
+            }
+        }
+        return view('admin.editNoticeList',['notices' => $notices]);
+    }
+
+    public function editMemberList(){        
+        $members = DB::select('select * from members where status = "1"');
+        return view('admin.editMemberList',['members' => $members]);
+    }
+
+    public function editAboutList(){        
+        $about = DB::select('select * from about where status = "1"');
+        return view('admin.editAboutList',['abouts' => $about]);
+    }
+
+    public function deleteUser($id){
+
+        $user = UserDetails::where('id',$id)
+                        ->where('status', '<>', 3)
+                        ->first();
+
+        $user->status = 3;
+
+        $user->save();
+
+        return redirect::to('admin/editUserList');
+    }
+
+    public function deleteContact($id){
+
+        $contacts = contacts::where('id',$id)
+                        ->where('status', '<>', 3)
+                        ->first();
+
+        $contacts->status = 3;
+
+        $contacts->save();
+
+        return redirect::to('admin/editContactList');
+    }
+
+    public function deleteDownload($id){
+
+        $downloads = downloads::where('id',$id)
+                        ->where('status', '<>', 3)
+                        ->first();
+
+        $downloads->status = 3;
+
+        $downloads->save();
+
+        return redirect::to('admin/editDownloadList');
+    }
+
+    public function deleteNotice($id){
+
+        $notices = notices::where('id',$id)
+                        ->where('status', '<>', 3)
+                        ->first();
+
+        $notices->status = 3;
+
+        $notices->save();
+
+        return redirect::to('admin/editNoticeList');
+    }
+
+    public function deleteMember($id){
+        $members = members::where('id',$id)
+                        ->where('status', '<>', 3)
+                        ->first();
+
+        $members->status = 3;
+
+        $members->save();
+
+        return redirect::to('admin/editMemberList');
+    }
+
+    public function deleteAbout($id){
+
+        $about = about::where('id',$id)
+                        ->where('status', '<>', 3)
+                        ->first();
+
+        $about->status = 3;
+
+        $about->save();
+
+        return redirect::to('admin/editAboutList');
+    }
+
+
 
 }

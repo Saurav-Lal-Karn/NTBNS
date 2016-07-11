@@ -33,7 +33,7 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Users</h2>
+                    <h2>Members</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -47,15 +47,17 @@
                   </div>
                   <div class="x_content">
 
-                    <p>List of users with editing options</p>
+                    <p>List of members with editing options</p>
 
                     <!-- start project list -->
                     <table class="table table-striped projects">
                       <thead>
                         <tr>
                           <th style="width: 1%">#</th>
-                          <th style="width: 20%">User Name</th>
-                          <th>Picture</th>
+                          <th style="width: 20%">Name</th>
+                          <th style="width: 10%">Picture</th>
+                          <th style="width: 15%">Category</th>
+                          <th>Details</th>
                           <th>Status</th>
                           <th style="width: 20%">#Edit</th>
                         </tr>
@@ -63,31 +65,38 @@
                       <tbody>
                         
 
-
+                      @foreach($members as $member)
                         <tr>
                           <td>#</td>
                           <td>
-                            <a>Pesamakini Backend UI</a>
+                            <a>{{$member->name}} </a>
                             <br />
-                            <small>Created 01.01.2015</small>
+                            <small>{{ $member->created_at }}</small>
                           </td>
                           <td>
                             <ul class="list-inline">
                               <li>
-                                <img src="images/user.png" class="avatar" alt="Avatar">
+                                <img src="../uploads/user.png" class="avatar" alt="Avatar">
                               </li>
                             </ul>
                           </td>
-                          
+                          <td> <a> {{$member->category }}</a> </td>
+                          <td> 
+                            <a>
+                              {{ $member->faculty }}
+                            </a>
+                            <br/>
+                            <small>Batch : {{$member->batch}} </small>
+                           </td>
                           <td>
                             <button type="button" class="btn btn-success btn-xs">Active</button>
                           </td>
                           <td>
-                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                            <a href="{{url('admin/editMember')}}/{{ $member->id }}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                            <a href="{{url('admin/deleteMember')}}/{{$member->id}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                           </td>
                         </tr>
-                        
+                        @endforeach
 
 
 

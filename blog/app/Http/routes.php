@@ -15,22 +15,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('profile', function () {
-    return view('profile');
-});
 
-Route::get('contact', function () {
-    return view('contact');
-});
-
-Route::get('about', function () {
-    return view('about');
-});
-
+Route::get('contact', 'NTBNSController@contactInit');
 Route::get('gallery', 'NTBNSController@gallery');
-Route::get('downloads', 'NTBNSController@downloads');
-Route::get('members', 'NTBNSController@members');
-Route::get('notices', 'NTBNSController@notices');
+Route::get('downloads/{folder}', 'NTBNSController@downloadInit');
+Route::get('members/{category}', 'NTBNSController@memberInit');
+Route::get('notices/{category}', 'NTBNSController@noticeInit');
+
 Route::get('login', 'NTBNSController@login');
 Route::post('login', 'ntbnsServiceController@login');
 
@@ -79,23 +70,92 @@ Route::group(['prefix' => 'admin'], function () {
         'uses'      =>'ntbnsServiceController@editContactList'
     ]);
 
-    Route::get('editMemberList',['middleware'=>'auth', function (){
-        return view('admin.editMemberList');
-    }]);
+    Route::get('editDownloadList',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@editDownloadList'
+    ]);
 
-    Route::get('editNoticeList',['middleware'=>'auth', function (){
-        return view('admin.editNoticeList');
-    }]);
+    Route::get('editNoticeList',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@editNoticeList'
+    ]);
 
-    Route::get('editDownloadList',['middleware'=>'auth', function (){
-        return view('admin.editDownloadList');
-    }]);
+    Route::get('editMemberList',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@editMemberList'
+    ]);
 
-    Route::get('editAboutList',['middleware'=>'auth', function (){
-        return view('admin.editAboutList');
-    }]);    
+    Route::get('editAboutList',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@editAboutList'
+    ]);
+
+
+
+    Route::get('editUser/{id}',[
+        'middleware'=>'auth', 
+        'uses'      =>'ntbnsServiceController@editUser'
+    ]);
+    
+    Route::get('editContact/{id}',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@editContact'
+    ]);
+
+    Route::get('editDownload/{id}',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@editDownload'
+    ]);
+
+    Route::get('editNotice/{id}',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@editNotice'
+    ]);
+
+    Route::get('editMember/{id}',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@editMember'
+    ]);
+
+    Route::get('editAbout/{id}',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@editAbout'
+    ]);
+
+
+    Route::get('deleteUser/{id}',[
+        'middleware'=>'auth', 
+        'uses'      =>'ntbnsServiceController@editUser'
+    ]);
+    
+
+    Route::get('deleteContact/{id}',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@deleteContact'
+    ]);
+
+    Route::get('deleteDownload/{id}',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@deleteDownload'
+    ]);
+
+    Route::get('deleteNotice/{id}',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@deleteNotice'
+    ]);
+
+    Route::get('deleteMember/{id}',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@deleteMember'
+    ]);
+
+    Route::get('deleteAbout/{id}',[
+        'middleware'=>'auth',
+        'uses'      =>'ntbnsServiceController@deleteAbout'
+    ]);
 
     Route::post('addUser', 'ntbnsServiceController@addUser');
+    Route::post('addUser/{id}', 'ntbnsServiceController@addUser');
     Route::post('addContact', 'ntbnsServiceController@addContact');
     Route::post('addAbout', 'ntbnsServiceController@addAbout');
     Route::post('addDownload', 'ntbnsServiceController@addDownload');

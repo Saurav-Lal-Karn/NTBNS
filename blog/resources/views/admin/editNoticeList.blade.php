@@ -33,7 +33,7 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Users</h2>
+                    <h2>Notices</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -47,15 +47,16 @@
                   </div>
                   <div class="x_content">
 
-                    <p>List of users with editing options</p>
+                    <p>List of notices with editing options</p>
 
                     <!-- start project list -->
                     <table class="table table-striped projects">
                       <thead>
                         <tr>
                           <th style="width: 1%">#</th>
-                          <th style="width: 20%">User Name</th>
-                          <th>Picture</th>
+                          <th style="width: 20%">Title</th>
+                          <th>Description</th>
+                          <th>Uploaded By</th>
                           <th>Status</th>
                           <th style="width: 20%">#Edit</th>
                         </tr>
@@ -63,31 +64,27 @@
                       <tbody>
                         
 
-
+                      @foreach($notices as $notice)
                         <tr>
                           <td>#</td>
                           <td>
-                            <a>Pesamakini Backend UI</a>
+                            <a>{{$notice->title }} </a>
                             <br />
-                            <small>Created 01.01.2015</small>
+                            <small>Uploaded at {{ $notice->created_at }}</small>
                           </td>
                           <td>
-                            <ul class="list-inline">
-                              <li>
-                                <img src="images/user.png" class="avatar" alt="Avatar">
-                              </li>
-                            </ul>
+                            <a> {{$notice->description}} </a>
                           </td>
-                          
+                          <td><a> {{$notice->uploadedBy}} </a></td>
                           <td>
                             <button type="button" class="btn btn-success btn-xs">Active</button>
                           </td>
                           <td>
-                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                            <a href="{{url('admin/editNotice')}}/{{ $notice->id }}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                            <a href="{{url('admin/deleteNotice')}}/{{$notice->id}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                           </td>
                         </tr>
-                        
+                        @endforeach
 
 
 

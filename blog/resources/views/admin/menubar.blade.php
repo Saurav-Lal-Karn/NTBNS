@@ -3,7 +3,7 @@
     <div class="menu_section">
             <ul class="nav side-menu">
                 <li>
-                    <a href="/">
+                    <a href="{{url('admin/index')}}">
                         <i class="fa fa-home"></i> Home
                         
                     </a>
@@ -13,40 +13,40 @@
                       <i class="fa fa-info"></i> About Us<span class="fa fa-chevron-down"></span>
                   </a>
                     <ul class="nav child_menu">
-                      <li><a href="addAbout">Add</a></li>
-                      <li><a href="editAboutList">Edit</a></li>
+                      <li><a href="{{url('admin/addAbout')}}">Add</a></li>
+                      <li><a href="{{url('admin/editAboutList')}}">Edit</a></li>
                     </ul>
                 </li>
                   
                 <li><a><i class="fa fa-users"></i> Members <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="addMember">Add</a></li>
-                      <li><a href="editMemberList">Edit</a></li>
+                      <li><a href="{{url('admin/addMember')}}">Add</a></li>
+                      <li><a href="{{url('admin/editMemberList')}}">Edit</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-file-text"></i>Notices <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="addNotice">Add</a></li>
-                      <li><a href="editNoticeList">Edit</a></li>
+                      <li><a href="{{url('admin/addNotice')}}">Add</a></li>
+                      <li><a href="{{url('admin/editNoticeList')}}">Edit</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-download"></i>Downloads <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="addDownload">Add</a></li>
-                      <li><a href="editDownloadList">Edit</a></li>
+                      <li><a href="{{url('admin/addDownload')}}">Add</a></li>
+                      <li><a href="{{url('admin/editDownloadList')}}">Edit</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-phone"></i>Contacts <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="addContact">Add</a></li>
-                      <li><a href="editContactList">Edit</a></li>
+                      <li><a href="{{url('admin/addContact')}}">Add</a></li>
+                      <li><a href="{{url('admin/editContactList')}}">Edit</a></li>
                     </ul>
                   </li>
 
                   <li><a><i class="fa fa-user"></i>Users<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="addUser">Add</a></li>
-                      <li><a href="editUserList">Edit</a></li>
+                      <li><a href="{{url('admin/addUser')}}">Add</a></li>
+                      <li><a href="{{url('admin/editUserList')}}">Edit</a></li>
                     </ul>
                   </li>
                 </ul>

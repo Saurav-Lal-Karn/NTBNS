@@ -36,18 +36,35 @@
                     <div class="row">
                       <div class="col-md-4 col-sm-4 col-xs-12" style="text-align:center;">
                         <i class ="fa fa-phone"></i>
-                        </br>
-                        <span> 123456789</span>
+                        @foreach($contacts as $contact)
+                          @if($contact->category == 'Contact Number')
+                            </br>
+                            <span>{{ $contact->contact }}</span>
+                          @endif
+                        @endforeach
+                        
                       </div>
                       <div class="col-md-4 col-sm-4 col-xs-12" style="text-align:center;">
                         <i class ="fa fa-envelope"></i>
-                        </br>
-                        <span>mail@mail.com</span>
+                          
+                          @foreach($contacts as $contact)
+                            @if($contact->category == 'Email')
+                              </br>
+                              <span>{{ $contact->contact }}</span>
+                            @endif
+                        @endforeach
+
                       </div>
                       <div class="col-md-4 col-sm-4 col-xs-12" style="text-align:center;">
                         <i class ="fa fa-map-marker"></i>
-                        </br>
-                        <span>IOE,Pulchowk Campus</span>
+                        
+                        @foreach($contacts as $contact)
+                          @if($contact->category == 'Address')
+                            </br>
+                            <span>{{ $contact->contact }}</span>
+                          @endif
+                        @endforeach
+
                       </div>
                     </div>    
                   </div>
