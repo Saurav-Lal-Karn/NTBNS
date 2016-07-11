@@ -52,27 +52,27 @@
 
 
 
-                      
+                     @foreach($members as $member) 
                         <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
                           <div class="well profile_view">
                             <div class="col-sm-12">
-                              <h4 class="brief"><i>Faculty Member</i></h4>
+                              <h4 class="brief"><i>{{$member->category}}</i></h4>
                               <div class="left col-xs-7">
-                                <h2>XXXXXX YYYYY ZZZZ</h2>
-                                <p><strong>About: </strong> Batch | FACULTY | CURRENT </p>
+                                <h2>{{$member->name }} </h2>
+                                <p><strong>About: </strong> {{$member->batch}} | {{$member->faculty}} | {{$member->rollNo}} </p>
                                 <ul class="list-unstyled">
-                                  <li><i class="fa fa-building"></i> Address: </li>
-                                  <li><i class="fa fa-phone"></i> Phone #: </li>
+                                  <li><i class="fa fa-building"></i> Address: {{$member->address }}</li>
+                                  <li><i class="fa fa-phone"></i> Phone #: {{ $member->phoneNo}}</li>
                                 </ul>
                               </div>
                               <div class="right col-xs-5 text-center">
-                                <img src="images/img.jpg" alt="" class="img-circle img-responsive">
+                                <img src="{{ url('uploads/profilepictures')}}/{{$member->category}}/{{$member->picture}}" alt="" class="img-circle img-responsive">
                               </div>
                             </div>
                             <div class="col-xs-12 bottom text-center">
                               <div class="col-xs-12 col-sm-6 emphasis">
                                 <button type="button" class="btn btn-primary btn-xs" >
-                                  <a href="profile">
+                                  <a href="{{ url('profile') }}/{{$member->id}} ">
                                     <i class="fa fa-user"> </i> View Profile
                                   </a>
                                 </button>
@@ -80,7 +80,7 @@
                             </div>
                         </div>
                       </div>
-
+                      @endforeach
                       
 
 

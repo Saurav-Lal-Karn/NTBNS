@@ -17,10 +17,12 @@ Route::get('/', function () {
 
 
 Route::get('contact', 'NTBNSController@contactInit');
+Route::get('about', 'NTBNSController@aboutInit');
 Route::get('gallery', 'NTBNSController@gallery');
 Route::get('downloads/{folder}', 'NTBNSController@downloadInit');
 Route::get('members/{category}', 'NTBNSController@memberInit');
 Route::get('notices/{category}', 'NTBNSController@noticeInit');
+Route::get('profile/{id}', 'NTBNSController@profileInit');
 
 Route::get('login', 'NTBNSController@login');
 Route::post('login', 'ntbnsServiceController@login');
