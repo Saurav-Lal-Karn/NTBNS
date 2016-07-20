@@ -6,7 +6,12 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
+<<<<<<< HEAD
         "laravel/framework": "5.2.*"
+=======
+        "laravel/framework": "5.2.*",
+        "laravelcollective/html": "~5.0"
+>>>>>>> 1c7c8fb3f1680cb7f0e94d5085418444e759bf65
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

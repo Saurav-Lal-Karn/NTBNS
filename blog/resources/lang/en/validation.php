@@ -34,11 +34,17 @@ return [
     'different'            => 'The :attribute and :other must be different.',
     'digits'               => 'The :attribute must be :digits digits.',
     'digits_between'       => 'The :attribute must be between :min and :max digits.',
+<<<<<<< HEAD
     'dimensions'           => 'The :attribute has invalid image dimensions.',
     'distinct'             => 'The :attribute field has a duplicate value.',
     'email'                => 'The :attribute must be a valid email address.',
     'exists'               => 'The selected :attribute is invalid.',
     'file'                 => 'The :attribute must be a file.',
+=======
+    'distinct'             => 'The :attribute field has a duplicate value.',
+    'email'                => 'The :attribute must be a valid email address.',
+    'exists'               => 'The selected :attribute is invalid.',
+>>>>>>> 1c7c8fb3f1680cb7f0e94d5085418444e759bf65
     'filled'               => 'The :attribute field is required.',
     'image'                => 'The :attribute must be an image.',
     'in'                   => 'The selected :attribute is invalid.',

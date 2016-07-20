@@ -11,8 +11,11 @@ return [
     | framework when an event needs to be broadcast. You may set this to
     | any of the connections defined in the "connections" array below.
     |
+<<<<<<< HEAD
     | Supported: "pusher", "redis", "log"
     |
+=======
+>>>>>>> 1c7c8fb3f1680cb7f0e94d5085418444e759bf65
     */
 
     'default' => env('BROADCAST_DRIVER', 'pusher'),

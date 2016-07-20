@@ -38,14 +38,22 @@ return [
             'driver' => 'database',
             'table' => 'jobs',
             'queue' => 'default',
+<<<<<<< HEAD
             'expire' => 90,
+=======
+            'expire' => 60,
+>>>>>>> 1c7c8fb3f1680cb7f0e94d5085418444e759bf65
         ],
 
         'beanstalkd' => [
             'driver' => 'beanstalkd',
             'host' => 'localhost',
             'queue' => 'default',
+<<<<<<< HEAD
             'ttr' => 90,
+=======
+            'ttr' => 60,
+>>>>>>> 1c7c8fb3f1680cb7f0e94d5085418444e759bf65
         ],
 
         'sqs' => [
@@ -61,7 +69,11 @@ return [
             'driver' => 'redis',
             'connection' => 'default',
             'queue' => 'default',
+<<<<<<< HEAD
             'expire' => 90,
+=======
+            'expire' => 60,
+>>>>>>> 1c7c8fb3f1680cb7f0e94d5085418444e759bf65
         ],
 
     ],

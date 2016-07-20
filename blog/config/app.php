@@ -110,8 +110,11 @@ return [
 
     'log' => env('APP_LOG', 'single'),
 
+<<<<<<< HEAD
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+=======
+>>>>>>> 1c7c8fb3f1680cb7f0e94d5085418444e759bf65
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -157,7 +160,11 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+<<<<<<< HEAD
 
+=======
+        Collective\Html\HtmlServiceProvider::class,
+>>>>>>> 1c7c8fb3f1680cb7f0e94d5085418444e759bf65
     ],
 
     /*
@@ -203,6 +210,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+<<<<<<< HEAD
+=======
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+>>>>>>> 1c7c8fb3f1680cb7f0e94d5085418444e759bf65
 
     ],
 
