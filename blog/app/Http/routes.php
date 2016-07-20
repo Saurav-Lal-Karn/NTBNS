@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('index');
+});*/
+
+Route::get('events', function () {
+    return view('events');
 });
 
-
+Route::get('/', 'NTBNSController@indexInit');
 Route::get('contact', 'NTBNSController@contactInit');
 Route::get('about', 'NTBNSController@aboutInit');
 Route::get('gallery', 'NTBNSController@gallery');
